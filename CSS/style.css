@@ -7,16 +7,6 @@
     background-color: #faf4ed;
 }
 
-@media only screen and (max-width: 600px) {
-    * {
-        font-size: 12px;
-    }
-
-    textarea {
-        width: 100%;
-    }
-}
-
 .container {
     display: grid;
     grid-template-rows: 0.25fr 1fr 0.25fr;
@@ -136,7 +126,6 @@ li {
     justify-content: right;
     align-self: flex-start;
     margin-right: 1em;
-
 }
 
 .main-2 button {
@@ -178,4 +167,78 @@ textarea {
 
 .del {
     color: #575279;
+}
+
+@media only screen and (max-width: 600px) {
+    * {
+        font-size: 12px;
+    }
+
+    .header li {
+        font-size: 1.5em;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 0.25fr 0.75fr;
+        grid-auto-rows: auto;
+        grid-template-areas:
+        ' me h'
+        ' li ma '
+        ' ma ma '
+        ' f f ';
+    }
+
+    .menu {
+        font-size: 3rem;
+    }
+
+    .main {
+        align-items: center;
+    }
+
+    .main button {
+        font-size: 2em;
+        justify-content: center;
+    }
+
+/* Second page "notes.html" */
+
+    .container-2 {
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: 0.25fr 1fr;
+        grid-template-areas:
+        ' h h '
+        ' li me '
+        ' m3 m2 '
+        ' d d '
+        ' f f ';
+    }
+
+    .links button {
+        font-size: 1.5em;
+    }
+
+    textarea {
+        width: 50vw;
+    }
+
+    .menu-open p {
+        font-size: 3rem;
+    }
+
+    .sav-del {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .sav-del button {
+        font-size: 2em;
+    }
+
+    .main-2 {
+        grid-area: m3
+    }
 }
