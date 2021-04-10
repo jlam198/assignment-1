@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="app.js" defer></script>
+    <script src="JS/app.js" defer></script>
     <title>Assignment 2</title>
 </head>
 <body>
@@ -21,7 +21,16 @@
             </ul>
         </nav>
 
-        <button class="menu-btn">&#62;&#62;</button>
+        <button class="menu-btn" onclick="openMenu()">&#62;&#62;</button>
+
+        <nav id="side-menu" class="side-menu">
+            <ul class="side">
+                <li class="close-btn" onclick="closeMenu()">&#60;&#60;</li>
+                <li>my notes</li>
+                <li>note one</li>
+                <li>note two</li>
+            </ul>
+        </nav>
 
         <div class="main">
             <button class="new-note-btn">&#43; create a new note</button>

@@ -5,6 +5,8 @@ function darkMode() {
     document.querySelector(".menu-btn").classList.toggle("darkmode")
     document.querySelector(".new-note-btn").classList.toggle("darkmode")
     document.querySelector(".dark-btn").classList.toggle("darkmode")
+    document.querySelector(".side-menu").classList.toggle("darkmode-menu")
+    document.querySelector(".side").classList.toggle("darkmode-menu li")
 }
 
 /*  function to add a new note      
@@ -16,3 +18,11 @@ function darkMode() {
 
 
 /* function to open and close side menu */
+
+function openMenu() {
+    document.getElementById("side-menu").style.display = "block";
+  }
+
+function closeMenu() {
+document.getElementById("side-menu").style.display = "none";
+}
