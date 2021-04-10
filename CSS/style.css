@@ -1,10 +1,10 @@
+/* page layout */
+
 * {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    color: #286983;
-    background-color: #faf4ed;
 }
 
 .container {
@@ -17,20 +17,55 @@
         'f f f';
     width: 100vw;
     height: 100vh;
+    color: #286983;
+    background-color: #faf4ed;
 }
 
-.header {
-    grid-area: h;
-}
+/* buttons */
 
-.menu {
+.menu-btn {
     grid-area: me;
     display: flex;
     justify-content: left;
     align-self: end;
     border: none;
-    padding-left: 30px
+    padding-left: 30px;
+    color: #286983;
+    background-color: #faf4ed;
 }
+
+.new-note-btn {
+    border: none;
+    align-self: flex-start;
+    margin-right: 20px;
+    color: #286983;
+    background-color: #faf4ed;
+}
+
+.dark-btn {
+    border: none;
+    color: #286983;
+    background-color: #faf4ed;
+}
+
+/* header */
+
+.header {
+    grid-area: h;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.top li {
+    list-style-type: none;
+    margin-right: 3em;
+}
+
+/* main body */
 
 .main {
     grid-area: ma;
@@ -38,26 +73,11 @@
     flex-direction: row;
 }
 
-.main button {
-    border: none;
-    align-self: flex-start;
-    margin-right: 20px;
-}
+/* footer */
 
 footer {
     grid-area: f;
     align-self: end;
-}
-
-li {
-    list-style-type: none;
-    margin-right: 3em;
-}
-
-.top {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
 }
 
 .foot {
@@ -67,107 +87,14 @@ li {
 
 }
 
-/* Second page "notes.html" */
+/* darkmode function */
 
-.container-2 {
-    display: grid;
-    grid-template-rows: 0.25fr 0.5fr 1fr 0.5fr 0.25fr;
-    grid-template-columns: 0.5fr 0.25fr 1fr 1fr;
-    grid-template-areas: 
-        'me h h h'
-        'li b b b'
-        'li ma m2 s'
-        'li e d z'
-        'li f f f';
-    width: 100vw;
-    height: 100vh;
+.darkmode {
+    color: white;
+    background-color: black;
 }
 
-.menu-open {
-    display: flex;
-    justify-content: right;
-    grid-area: me;
-    background: #f2e9de;
-    border: none;
-}
-
-.menu-open p {
-    background-color: #f2e9de;
-    font-size: 1.5rem;
-    padding-right: 1.5rem;
-}
-
-.links-menu {
-    grid-area: li;
-    background-color: #f2e9de;
-}
-
-.links-menu li {
-    margin-bottom: 1em;
-    background: #f2e9de;
-}
-
-.links-menu button {
-    background: #f2e9de;
-    border: none;
-}
-
-.links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #f2e9de;
-}
-
-.main-2 {
-    grid-area: ma;
-    display: flex;
-    justify-content: right;
-    align-self: flex-start;
-    margin-right: 1em;
-}
-
-.main-2 button {
-    font-size: 2rem;
-    border: none;
-}
-
-.note {
-    grid-area: m2;
-}
-
-textarea {
-    padding: 0.75em;
-    background-color: #fffaf3;
-}
-
-.action {
-    grid-area: d;
-}
-
-.sav-del {
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-}
-
-.sav-del li:first-child {
-    margin-right: 1em;
-}
-
-.sav-del li:nth-child(2) {
-    color: #b4637a;
-    margin-right: 0;
-}
-
-.sav-del button {
-    border: none;
-}
-
-.del {
-    color: #575279;
-}
+/* media query */
 
 @media only screen and (max-width: 600px) {
     * {
@@ -200,45 +127,5 @@ textarea {
     .main button {
         font-size: 2em;
         justify-content: center;
-    }
-
-/* Second page "notes.html" */
-
-    .container-2 {
-        display: grid;
-        grid-auto-rows: auto;
-        grid-template-columns: 0.25fr 1fr;
-        grid-template-areas:
-        ' h h '
-        ' li me '
-        ' m3 m2 '
-        ' d d '
-        ' f f ';
-    }
-
-    .links button {
-        font-size: 1.5em;
-    }
-
-    textarea {
-        width: 50vw;
-    }
-
-    .menu-open p {
-        font-size: 3rem;
-    }
-
-    .sav-del {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .sav-del button {
-        font-size: 2em;
-    }
-
-    .main-2 {
-        grid-area: m3
     }
 }
