@@ -1,5 +1,4 @@
 /* page layout */
-
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +21,6 @@
 }
 
 /* buttons */
-
 .menu-btn {
     grid-area: me;
     display: flex;
@@ -58,7 +56,6 @@
 }
 
 /* header */
-
 .header {
     grid-area: h;
 }
@@ -79,7 +76,6 @@
 }
 
 /* side menu */ 
-
 .side-menu {
     display: none;
     height: 100%;
@@ -114,8 +110,7 @@
     margin-left: 50px;
 }
 
-/* note taking area */
-
+/* new note area */
 .new-note {
     display: none;
     border-style: none;
@@ -160,6 +155,7 @@
     color: #286983;
 }
 
+/* loaded note area */
 .note-close {
     list-style: none;
     align-self: flex-end;
@@ -180,7 +176,6 @@
 }
 
 /* main body */
-
 .main {
     grid-area: ma;
     display: flex;
@@ -188,7 +183,6 @@
 }
 
 /* footer */
-
 footer {
     grid-area: f;
     align-self: end;
@@ -201,7 +195,6 @@ footer {
 }
 
 /* media query */
-
 @media only screen and (max-width: 600px) {
     * {
         font-size: 12px;
@@ -254,6 +247,21 @@ footer {
     }
 
     .sav-del li {
+        margin-bottom: 20%;
+    }
+
+    /* loaded note area */
+    .note-close {
+        left: 0;
+        right: 0;
+        bottom: 25%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 15%;
+        align-items: center;
+}
+
+    .note-close li {
         margin-bottom: 20%;
     }
 

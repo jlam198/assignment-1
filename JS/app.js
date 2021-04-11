@@ -1,7 +1,8 @@
-/* Function to switch between dark and light mode */
+/* ------------------------- Function to switch between dark and light mode ------------------------- */
 
+//Function to toggle darkmode CSS ------------------------
 function darkMode() {
-    //Main div items
+    //Main div item
     document.querySelector("div").classList.toggle("darkmode")
     //Button items
     document.querySelector(".menu-btn").classList.toggle("darkmode") 
@@ -17,14 +18,9 @@ function darkMode() {
     document.querySelector(".del-note").classList.toggle("darkmode-del")
 }
 
-/*  Function to add a new note      
-- user clicks button DONE -----------------------
-- textarea and save / cancel buttons appears DONE -----------------------
-- user clicks save to save note to an array
-- user clicks cancel to remove note taking textarea and buttons DONE -----------------------
-*/
+/*  ------------------------- Function to create and save notes ------------------------- */
 
-//Function to create note ------------------------
+//Function to create note (display text area) ------------------------
 function newNote() {
     //Show textarea
     document.getElementById("new-note").style.display = "block"; 
@@ -41,13 +37,14 @@ function saveNote() {
     console.log(note)
     const notearr = note.split('\n\n')
     notesArray.push(createNoteObject(notearr))
+    //Clear text area
     delNote()
     console.log(notesArray)
     //Get the title of note and store it as a list item in side menu
     const noteTitle = Object.values(newObject)[0]
     console.log(noteTitle)
     const entry = document.createElement("li")
-    //Function to load saved note
+    //Gives new list item the function to load saved note
     entry.onclick = function() {
         document.querySelector("textarea").value = note
         document.getElementById("new-note").style.display = "block"; 
@@ -59,7 +56,7 @@ function saveNote() {
 
 }
 
-//Function to close loaded note
+//Function to close loaded note ------------------------
 function closeNote() {
     //Remove textarea from view
     document.getElementById("new-note").style.display = "none"; 
@@ -71,12 +68,12 @@ function closeNote() {
     document.getElementById("new-note").value = "your text here"; 
 }
 
-//Function to create a noteObject
+//Function to create a noteObject ------------------------
 function createNoteObject(arr) {
     return newObject = { title: arr[0], body: arr[1] }
 }
 
-//Function to remove note ------------------------
+//Function to remove note (hide text area) ------------------------
 function delNote() {
     //Remove textarea from view
     document.getElementById("new-note").style.display = "none"; 
@@ -88,7 +85,7 @@ function delNote() {
     document.getElementById("new-note").value = "your text here"; 
 }
 
-/* Function to open and close side menu */
+/* ------------------------- Function to open and close side menu ------------------------- */
 
 //Function to open side menu ------------------------
 function openMenu() {
