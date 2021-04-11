@@ -24,11 +24,9 @@
         <button id="menu-btn" class="menu-btn" onclick="openMenu()">&#62;&#62;</button>
 
         <nav id="side-menu" class="side-menu">
-            <ul class="side">
+            <ul id="side" class="side">
                 <li class="close-btn" onclick="closeMenu()">&#60;&#60;</li>
                 <li>my notes</li>
-                <li>note one</li>
-                <li>note two</li>
             </ul>
         </nav>
 
@@ -39,6 +37,9 @@
             <ul id="sav-del" class="sav-del">
                 <li><button id="save-note" class="save-note" onclick="saveNote()">save</button></li>
                 <li><button id="del-note" class="del-note" onclick="delNote()">delete</button></li>
+            </ul>
+            <ul id="note-close" class="note-close">
+                <li><button id="note-close-btn" class="note-close-btn" onclick="closeNote()">close</button></li>
             </ul>
         </div>
 

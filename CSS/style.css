@@ -160,6 +160,25 @@
     color: #286983;
 }
 
+.note-close {
+    list-style: none;
+    align-self: flex-end;
+    display: none;
+    flex-direction: row;
+    position: absolute;
+    right: 27%;
+    bottom: 35%
+}
+
+.note-close button {
+    border-style: none;
+    background-color: transparent;
+}
+
+.note-close-btn {
+    color: #286983;
+}
+
 /* main body */
 
 .main {

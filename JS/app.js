@@ -4,9 +4,10 @@ function darkMode() {
     //Main div items
     document.querySelector("div").classList.toggle("darkmode")
     //Button items
-    document.querySelector(".menu-btn").classList.toggle("darkmode")
+    document.querySelector(".menu-btn").classList.toggle("darkmode") 
     document.querySelector(".new-note-btn").classList.toggle("darkmode")
     document.querySelector(".dark-btn").classList.toggle("darkmode")
+    document.querySelector(".note-close-btn").classList.toggle("darkmode-del")
     //Menu items
     document.querySelector(".side-menu").classList.toggle("darkmode-menu")
     document.querySelector(".side").classList.toggle("darkmode-menu")
@@ -35,14 +36,39 @@ function newNote() {
 
 //Function to save note ------------------------
 let notesArray = []
-
 function saveNote() {
     const note = document.querySelector("textarea").value
     console.log(note)
     const notearr = note.split('\n\n')
     notesArray.push(createNoteObject(notearr))
-    document.querySelector("textarea").value = ""
+    delNote()
     console.log(notesArray)
+    //Get the title of note and store it as a list item in side menu
+    const noteTitle = Object.values(newObject)[0]
+    console.log(noteTitle)
+    const entry = document.createElement("li")
+    //Function to load saved note
+    entry.onclick = function() {
+        document.querySelector("textarea").value = note
+        document.getElementById("new-note").style.display = "block"; 
+        document.getElementById("new-note-btn").style.display = "none"; 
+        document.getElementById("note-close").style.display = "flex"; 
+    }
+    entry.appendChild(document.createTextNode(noteTitle))
+    document.getElementById("side").appendChild(entry)
+
+}
+
+//Function to close loaded note
+function closeNote() {
+    //Remove textarea from view
+    document.getElementById("new-note").style.display = "none"; 
+    //Remove close button from view
+    document.getElementById("note-close").style.display = "none"; 
+    //Recover create new note button
+    document.getElementById("new-note-btn").style.display = "block"; 
+    //Reset textarea value
+    document.getElementById("new-note").value = "your text here"; 
 }
 
 //Function to create a noteObject
