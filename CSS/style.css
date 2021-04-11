@@ -10,7 +10,7 @@
 .container {
     display: grid;
     grid-template-rows: 0.25fr 1fr 0.25fr;
-    grid-template-columns: 0.4fr 1fr 1fr;
+    grid-template-columns: 0.75fr 1fr 1fr;
     grid-template-areas: 
         'me h h'
         'b ma ma'
@@ -31,20 +31,12 @@
     border: none;
     padding-left: 30px;
     color: #286983;
-    background-color: #faf4ed;
+    background-color: transparent;
     font-size: 2em;
 }
 
 .menu-btn:hover {
     color: #575279;
-}
-
-.side-menu .close-btn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
 }
 
 .new-note-btn {
@@ -91,7 +83,7 @@
 .side-menu {
     display: none;
     height: 100%;
-    width: 200px;
+    width: 20%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -113,6 +105,60 @@
 .side li:hover {
     color: #575279;
   }
+
+.side-menu .close-btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* note taking area */
+
+.new-note {
+    display: none;
+    border-style: none;
+    grid-area: ma;
+    margin-left: 15px;
+    padding: 10px;
+    width: 45vw;
+    height: 40vh;
+    color: #286983;
+    background-color: #fffaf3;
+    resize: none;
+}
+
+.new-note::placeholder {
+    opacity: 0.85;
+}
+
+.sav-del {
+    list-style: none;
+    align-self: flex-end;
+    display: none;
+    flex-direction: row;
+    position: absolute;
+    right: 27%;
+    bottom: 35%
+}
+
+.sav-del button {
+    border-style: none;
+    background-color: transparent;
+}
+
+.sav-del li {
+    margin: 5%;
+}
+
+.save-note {
+    color: #232136;
+}
+
+.del-note {
+    color: #286983;
+}
 
 /* main body */
 
@@ -172,6 +218,26 @@ footer {
         font-size: 3em;
     }
 
+    /* note text area */
+    .new-note {
+        font-size: 2em;
+    }
+
+    .sav-del {
+        flex-direction: column;
+        left: 0;
+        right: 0;
+        bottom: 25%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 15%;
+        align-items: center;
+    }
+
+    .sav-del li {
+        margin-bottom: 20%;
+    }
+
     /* new note button */
     .main {
         align-items: center;
@@ -198,4 +264,8 @@ footer {
 .darkmode-menu li{
     color: #e0def4;
     background-color: #393552;
+}
+
+.darkmode-del {
+    color: #ea9d34;
 }

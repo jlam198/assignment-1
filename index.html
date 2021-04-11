@@ -17,11 +17,11 @@
             <ul class="top">
                 <li>About</li>
                 <li>Docs</li>
-                <li><button type="button" onclick="darkMode()" class="dark-btn">&#9788;</button></li>
+                <li><button onclick="darkMode()" class="dark-btn">&#9788;</button></li>
             </ul>
         </nav>
 
-        <button class="menu-btn" onclick="openMenu()">&#62;&#62;</button>
+        <button id="menu-btn" class="menu-btn" onclick="openMenu()">&#62;&#62;</button>
 
         <nav id="side-menu" class="side-menu">
             <ul class="side">
@@ -32,8 +32,14 @@
             </ul>
         </nav>
 
+        <textarea id="new-note" class="new-note">your text here</textarea>
+
         <div class="main">
-            <button class="new-note-btn">&#43; create a new note</button>
+            <button id="new-note-btn" class="new-note-btn" onclick="newNote()">&#43; create a new note</button>
+            <ul id="sav-del" class="sav-del">
+                <li><button id="save-note" class="save-note" onclick="saveNote()">save</button></li>
+                <li><button id="del-note" class="del-note" onclick="delNote()">delete</button></li>
+            </ul>
         </div>
 
         <footer>
